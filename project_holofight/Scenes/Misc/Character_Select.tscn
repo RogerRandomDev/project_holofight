@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Misc/Character_Select.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Misc/character holder.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Misc/player select.tscn" type="PackedScene" id=3]
+
+[node name="Select_Screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+character_holder_scene = ExtResource( 2 )
+chars_per_row = [ 4, 3, 4, 4, 3, 4, 4, 3 ]
+
+[node name="HSplitContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P1" parent="HSplitContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 256.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
+margin_left = 260.0
+margin_right = 772.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 512, 600 )
+custom_constants/separation = 4
+alignment = 1
+
+[node name="P2" type="Control" parent="HSplitContainer"]
+margin_left = 776.0
+margin_right = 1032.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 256, 600 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
